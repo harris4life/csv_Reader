@@ -21,9 +21,7 @@ public class csv_reader {
 		Statement st = con.createStatement();
 	
 		int failedCount = 0 , 
-			successfulCount = 0, 
-		
-		
+			successfulCount = 0;
 		
 		
 		FileWriter csvWriter = new FileWriter("failedEntries.csv");  
@@ -36,7 +34,7 @@ public class csv_reader {
 		int counter = 0; 
 		BufferedReader csvReader = new BufferedReader(new FileReader("src/ms3Interview.csv")); 
 		
-		while ((row = csvReader.readLine()) != null && (counter!=10)) {  
+		while ((row = csvReader.readLine()) != null) {  
 		    String[] data = row.split(",");
 		    
 		    
@@ -64,20 +62,17 @@ public class csv_reader {
 		   
 		}
 	    
-	/*	logWriter.append("successfulCount: " + successfulCount); 
+		logWriter.append("successfulCount: " + successfulCount); 
 		logWriter.append("failedCount: " + failedCount); 
-		logWriter.append("receivedCount: " + database.recieved); */
+		logWriter.append("receivedCount: " + database.recieved); 
 
 		
 	 
 		csvReader.close(); 
 
 	}
-		
 }
-	
-	
-	
+
 	
 	
 
